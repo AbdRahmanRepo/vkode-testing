@@ -4,9 +4,9 @@
 // 2 type of function 
 //1. normal function
 //2. parameterized function
-function greet() {
-    console.log("Hello World");
-}
+// function greet() {
+//     console.log("Hello World");
+// }
 
 // This is city function
 function city(cityName: string) {
