@@ -13,7 +13,7 @@ function city(cityName: string) {
     console.log("This is " + cityName + " city");
 }
 
-function sum(a: number, b: number) {
+function sumWith2Param(a: number, b: number) {
     console.log("First parameter is :" + a)
     console.log("second parameter is :" + b)
     console.log(a + b);
@@ -28,14 +28,47 @@ function sum2(a: number, b: number, c: number, message: string, isNumber: boolea
 }
 
 
+// Return Type function
+function returnTypeFunc(a: number, b: number): number {
+    return a + b;
+}
+
+let res: number = 20;
+let result: number = returnTypeFunc(10, 20);
+
+// console.log(result);
+
+
+// Named Function
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+// Anonymus Function
+let sub = function (a: number, b: number): number {
+    return a - b;
+}
+// Dynamic Typing
+
+let names = "Abd";
+
+console.log(typeof names);
+
+
+// Arrow Function / Lambda function
+
+// let functionName = (Parameters) : returnType => num + num;
+
+let mult = (num1: number, num2: number): number => num1 * num2;
+
+// console.log(mult(10, 20));
 
 //function call
 // greet();
 // city("Pune");
 // sum2(1, 2, 3, "Printing the 4 parameters summed up value", true, 1);
 
-
-// <********* Functions **********/>
+// <************************ Functions ***************************/>
 
 // <*************** Comments ***************>
 
@@ -101,7 +134,7 @@ let age: number = 15;
 
 // console.log(age >= 18 ? "You can drive" : "You can't drive");
 
-//conditional statements
+//<*************************** conditional statements ******************************>
 
 // red , white , blue
 // if (condition is true) {
@@ -140,17 +173,48 @@ let choc: string = "dairyMilk"
 //    // code to be executed
 //}
 
-let mark: number = 100;
+// let mark: number = 100;
 
-if (mark == 60) {
-    console.log("Average Mark");
-} else if (mark == 80) {
-    console.log("Good Mark");
-} else if (mark == 90) {
-    console.log("Exellent Mark");
-} else {
-    console.log("Cannot compare");
-}
+// if (mark == 60) {
+//     console.log("Average Mark");
+// } else if (mark == 80) {
+//     console.log("Good Mark");
+// } else if (mark == 90) {
+//     console.log("Exellent Mark");
+// } else {
+//     console.log("Cannot compare");
+// }
+
+
+// Switch Case
+
+// switch (variable) {
+//     case value1:
+//         // code to be executed
+//         break;
+//     case value2:
+//         // code to be executed
+//         break;
+//     default:
+//         // code to be executed
+//         break;
+// }
+
+// let day: number = 3;
+// let dayName: string = "Tuesday";
+
+// switch (day) {
+//     case 1:
+//         console.log("Monday");
+//         break;
+//     case 2:
+//         console.log("Tuesday");
+//         break;
+//     default:
+//         console.log("Invalid day");
+//         break;
+// }
 
 
 
+//<*************************** conditional statements ******************************>
