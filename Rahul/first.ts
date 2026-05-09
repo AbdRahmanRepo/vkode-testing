@@ -43,4 +43,4 @@ if (price <= 10){
 }else {
    return"No chocolate available";
 }
-} console.log (chocolate(100))
+} console.log (chocolate(102))
