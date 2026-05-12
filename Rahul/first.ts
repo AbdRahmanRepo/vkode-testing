@@ -1,4 +1,4 @@
-function Output (){
+3function Output (){
     console.log("Hi Team , You are")
 
     let aa: number = 44;
