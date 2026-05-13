@@ -74,10 +74,10 @@
 
 // }
 
-for (let c:number=1;c<=20;c++){
-   if(c%2==0){
-      console.log("Print Even number", c);
-     break;
-   }      
+// for (let c:number=1;c<=20;c++){
+//    if(c%2==0){
+//       console.log("Print Even number", c);
+//      break;
+//    }      
 
- }
+//  }
