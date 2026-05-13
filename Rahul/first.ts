@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 // function Output (){
 //     //console.log("Hi Team , You are")
+=======
+<<<<<<< HEAD
+3function Output (){
+    console.log("Hi Team , You are")
+=======
+function Output (){
+    //console.log("Hi Team , You are")
+>>>>>>> f10cc97cf6c1da0d3ad4cc57598a7a478300625d
+>>>>>>> 2051da505f03bf66cb4ae004be272845859b267e
 
 //     let aa: number = 44;
 //         if (aa==100)
