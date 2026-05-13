@@ -4,21 +4,25 @@
 // 2 type of function 
 //1. normal function
 //2. parameterized function
-// function greet() {
-//     console.log("Hello World");
-// }
+
+// function funcName() { business lo}
+// Function call - funcName();
+
+function greet() {
+    console.log("Hello World");
+}
 
 // This is city function
 function city(cityName: string) {
     console.log("This is " + cityName + " city");
 }
 
-function sumWith2Param(a: number, b: number) {
+
+function sumWith2Param(a: number, b: number): void {
     console.log("First parameter is :" + a)
     console.log("second parameter is :" + b)
     console.log(a + b);
 }
-
 
 
 function sum2(a: number, b: number, c: number, message: string, isNumber: boolean, d: number) {
@@ -51,8 +55,6 @@ let sub = function (a: number, b: number): number {
 // Dynamic Typing
 
 let names = "Abd";
-
-console.log(typeof names);
 
 
 // Arrow Function / Lambda function
@@ -218,3 +220,89 @@ let choc: string = "dairyMilk"
 
 
 //<*************************** conditional statements ******************************>
+
+//<*************************** Looping statements ******************************>
+
+
+// While
+//do-while
+//For
+
+/*  Syntax
+while(condition){
+    Code to be executed
+} */
+let i: number = 1;
+
+// while (i <= 5) {   // 1 <= 0     - loop break
+//     console.log(i);  // print 1 2 3 4 5
+//     i++;            // 6
+// }
+
+// do {
+//     console.log(i);  // print 1 2 3 4 5
+//     i++;
+// } while (i <= 5);
+
+// For loop
+// for(Initialization,condition,increment){
+//     code to be executed
+// }
+
+// for (let i = 1; i <= 5; i++) {     // 1, 2, 3, 4, 5. // Scope
+//     console.log(i); // print 1 2 3 4 5 
+// }
+
+// i++ - increment after the code execution 
+// ++i - increment before the code execution
+
+// Continue statements / keyword
+// for (let i = 1; i <= 5; i++) {     // 1 2 3
+//     if (i == 3) { // 3 == 3
+//         continue;
+//     }
+//     console.log(i); // print 1 2 
+// }
+
+// Break statements / keyword
+// for (let i = 1; i <= 5; i++) {     // 1 2 3
+//     if (i == 3) { // 3 == 3
+//         break;
+//     }
+//     console.log(i); // print 1 2 
+// }
+
+
+//</*************************** Looping statements ******************************>
+
+//<*************************** Arrays ******************************>
+// To store multiple values in a single variable
+// literal array syntax - using squre brackets []
+// generic array syntax - Array<type>
+
+let arr: string[] = [];
+
+arr[0] = "A";
+arr[1] = "B";
+arr[2] = "C";
+
+// console.log(arr);
+
+let snames: Array<string> = ['Rasna', 'Abd', 'Rahul', 'Vijay', 'Karthik'];
+
+// console.log(snames[3]);
+
+//Iterating Over Array - Loop
+// for (let i = 0; i < snames.length; i++) { //i =0, 1, 2, 3
+//     console.log(snames[i]);
+// }
+
+// Array.functionCalls in-build method
+console.log(snames.indexOf('Rahul'));
+snames.length;
+
+// for...in
+// for...of
+
+
+//</*************************** Arrays ******************************>
