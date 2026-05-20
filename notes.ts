@@ -58,6 +58,8 @@ let names = "Abd";
 
 
 // Arrow Function / Lambda function
+let subLambda = (a: number, b: number): number => a - b;
+
 
 // let functionName = (Parameters) : returnType => num + num;
 
@@ -275,34 +277,359 @@ let i: number = 1;
 
 //</*************************** Looping statements ******************************>
 
-//<*************************** Arrays ******************************>
-// To store multiple values in a single variable
-// literal array syntax - using squre brackets []
-// generic array syntax - Array<type>
+//<*************************** String ******************************>
 
-let arr: string[] = [];
+// string - Text value or a combination of characters
+/*
+1. Single Quote - String Literal ('SingleQuote')
+2. Double quote - String literal ("DoubleQuote")
+3. backtick (``) - String template - `When we try to use a string variable inside another sting value ${variable}`
 
-arr[0] = "A";
-arr[1] = "B";
-arr[2] = "C";
-
-// console.log(arr);
-
-let snames: Array<string> = ['Rasna', 'Abd', 'Rahul', 'Vijay', 'Karthik'];
-
-// console.log(snames[3]);
-
-//Iterating Over Array - Loop
-// for (let i = 0; i < snames.length; i++) { //i =0, 1, 2, 3
-//     console.log(snames[i]);
-// }
-
-// Array.functionCalls in-build method
-console.log(snames.indexOf('Rahul'));
-snames.length;
-
-// for...in
-// for...of
+// index in string starts with 0
 
 
-//</*************************** Arrays ******************************>
+'' or "" or ``(backtick)
+*/
+
+//Declartion of strings
+
+let str1: string = 'This is a string with single quote';
+let str2: string = "This is a string with double quote";
+let str3: string = `This is a string with back tick`;
+
+console.log(str1);
+console.log(str2);
+console.log(str3);
+
+//When to use back tick  ``
+
+let num: number = 10;
+
+console.log("Number is:", num);  //10   //valid
+console.log("Number is: ${num}"); //not valid
+console.log('Number is: ${num}'); //not valid
+console.log(`Number is: ${num}`); // Number is: 10   valid
+
+
+
+//String methods
+
+let str: string = "Hello, TypeScript!";
+
+//1. lenght - find the length of ta string( how many number of characters)
+console.log("Length of a string: ", str.length);  //18
+
+//2.toUpperCase() and toLowerCase()
+console.log("Upper case: ", str.toUpperCase()); //HELLO, TYPESCRIPT!
+console.log("Lower case: ", str.toLowerCase()); //hello, typescript!
+
+
+//3. chatAt(index) and indexOf(string)
+
+console.log("Character at 4th index:", str.charAt(4));   //0
+console.log("Index of Type: ", str.indexOf("Type"));  //7
+
+
+//4. substring(starting index, ending index)
+// ending index is exclussive
+//"Hello, TypeScript!"
+
+console.log(str.substring(0, 5));  //Hello
+
+
+
+//5. includes(): returns true or false ( boolean)
+//string value is case sensitive
+
+console.log(str.includes("abc"));   //false
+console.log(str.includes("TypeScript"));   //true
+console.log(str.includes("!"));   //true
+console.log(str.includes("TYPESCRIPT"));   //fasle
+
+
+//6. startsWith() and endsWith() --> returns a boolean vale( true/false)
+console.log("starts with:", str.startsWith("Hello")); //true
+console.log("ends with:", str.endsWith("!")); //true
+console.log("ends with abc:", str.endsWith("abc")); //false
+
+//7. replace()
+//"Hello, TypeScript!"
+console.log("Repalced string:", str.replace("TypeScript", "World")); //Hello, World!
+
+//8. split() - break the string into multiple parts based on the delimeter, returns an array
+
+//Ex1:
+let words: string[] = str.split(" ")
+console.log("After splitting string:", words); //[ 'Hello,', 'TypeScript!' ]
+
+//Ex2: 
+let mystring: string = "abc@gmail.com,xyzabc";
+
+let arr = mystring.split(",");
+console.log("email:", arr[0]);
+console.log("password:", arr[1]);
+
+
+//9. trim(), trimStart(),trimEnd()
+
+mystring = "   welcome to typescript   ";
+
+console.log("Original string:", mystring);  //   welcome to typescript
+console.log("trim string:", mystring.trim());  //    "welcome to typescript"
+console.log("trimStart string:", mystring.trimStart());  // "welcome to typescript   "
+console.log("trimEnd string:", mystring.trimEnd());//"    welcome to typescript"
+
+
+
+//10. concat()
+
+str1 = "welcome";
+str2 = "to typescript";
+str3 = " and javascript";
+
+console.log("After concatenation:", str1.concat(str2)); // welcometo typescript
+console.log("After concatenation:", str1 + str2); // this is alternative but not recomended
+console.log("welcome".concat("to typescript")); //welcometo typescript
+console.log(str1.concat(str2).concat(str3)); //welcometo typescript and javascript
+
+
+// Concept of string immutability (immutable - cannot change original))
+
+//num=10;
+
+let res = num + 5;
+console.log(res); //15
+console.log(num);;//10
+
+
+str1 = "welcome";
+let modifiedstring = str1.concat("to typecript");
+console.log(str1); //welcome
+
+
+//Multiline string with backtik ``
+
+let multiline: string = `welcome
+                      to typescript`;
+
+console.log(multiline);
+
+//</*************************** String ******************************>
+
+//<*************************** Object ******************************>
+
+//object - object contains properties and behaviour.
+// object contains variables & methods
+// object is collection of key and value pairs.
+
+//Ex:
+
+// employee --name, desig, sal, dep
+//              bonus(), getemdetails(), setdetails()
+
+
+//student - name, sid,grade
+// getdetails(), setdetails()
+
+
+// Different ways to create an oject in JS/TS //
+// 1. using 'object' type - Directly define the values for variable (JS/TS)
+// 2. Inline Type Object - We also define the datatype of the keys (TS)
+// 3. Using type aliases (TS)
+// 4. Using the classes (JS ES16/TS)
+
+
+
+// 1. using 'object' type - Directly define the values for variable
+// The TypeScript 'object' type represents all values that are not in primitive types.
+
+/*
+let employee:object ={ 
+    name:"John", 
+    age:30, 
+    salary:50000, 
+    job:"Engineer" 
+}
+    */
+
+let employee = {
+    name: "John",
+    salary: 50000,
+    job: "Engineer",
+    getDetails: function (): string {
+        //console.log(this.name,this.salary,this.job);
+        return `${this.name} is a ${this.job} earning ${this.salary}`;
+    }
+}
+
+
+console.log(typeof employee); //object
+
+//accessing object - appraoch 1 ( using dot notation)
+console.log(employee.name, employee.salary, employee.job); //John 50000 Engineer
+console.log(employee.getDetails()); //John is a Engineer earning 50000
+
+
+//accessing object - appraoch2 (using braket notation)
+console.log(employee["name"], employee["salary"], employee["job"]); //John 50000 Engineer
+console.log(employee["getDetails"]()); //John is a Engineer earning 50000
+
+//Modify the value
+employee.job = "Manager";   //employee["job"]="Manager";
+console.log("Modified job is:", employee.job); // Manager
+
+//==============================================================================================================
+
+// 2. Inline Type Object - We also define the datatype of the keys (TS)
+
+let student: {
+    name: string,
+    age: number,
+    grade: string,
+    getSummary: () => string
+} =
+{
+    name: "Scott",
+    age: 15,
+    grade: "A",
+    getSummary: function () {
+        return `${this.name} is ${this.age} years old and scored grade ${this.grade}`;
+    }
+}
+
+console.log(student.getSummary()); //Scott is 15 years old and scored grade A
+
+
+// Problem with Inline Type object: Need to repeat structure for every object
+
+let student1: {
+    name: string,
+    age: number,
+    grade: string,
+    getSummary: () => string
+} =
+{
+    name: "Marry",
+    age: 16,
+    grade: "B",
+    getSummary: function () {
+        return `${this.name} is ${this.age} years old and scored grade ${this.grade}`;
+    }
+};
+console.log(student1.getSummary()); // Marry is 16 years old and scored grade B
+
+//=======================================================================
+
+// 3. Using 'type' aliases (TS): allows creating a new name for an existing type
+
+//Example 1:
+
+type Product = {
+    name: string,
+    price: number,
+    getInfo: () => string
+};
+
+
+let book1: Product =
+{
+    name: "Learn java",
+    price: 300,
+    getInfo: function () {
+        return `${this.name} costs ${this.price}`;
+    }
+}
+
+let book2: Product =
+{
+    name: "Learn Python",
+    price: 500,
+    getInfo: function () {
+        return `${this.name} costs ${this.price}`;
+    }
+}
+
+let book3: Product =
+{
+    name: "Learn JS",
+    price: 600,
+    getInfo: function () {
+        return `${this.name} costs ${this.price}`;
+    }
+}
+
+console.log(book1.getInfo()); //Learn java costs 300
+console.log(book2.getInfo()); //Learn Python costs 500
+console.log(book3.getInfo()); //Learn JS costs 600
+
+
+// Example 2: Intersection Types
+
+type Personal = {
+    name: string,
+    age: number
+};
+type Contact = {
+    email: string,
+    phone: number
+}
+
+type Candidate = Personal & Contact &
+{
+    getContactInfo: () => string;
+}
+
+let cand: Candidate = {
+    name: "Scott",
+    age: 25,
+    email: "abc@gmail.com",
+    phone: 1234567890,
+    getContactInfo: function () {
+
+        return `${this.name} can be contacted at ${this.email} or ${this.phone}`;
+    }
+}
+
+console.log(cand.getContactInfo()); //Scott can be contacted at abc@gmail.com or 1234567890
+
+
+
+
+
+// ==================================================
+// 4. Using the classes (JS ES16/TS)
+
+class Person {
+    ssn: string;
+    firstName: string;
+    lastName: string;
+
+    constructor(ssn: string, firstName: string, lastName: string) {
+        this.ssn = ssn;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName(): string {
+
+        return `${this.firstName} ${this.lastName}`;
+    }
+
+    getDetails(): string {
+        return `SSN: ${this.ssn}, Name: ${this.getFullName()}`;
+    }
+
+}
+
+//object creation
+let person1 = new Person('1121233333', 'John', 'Kenedy');
+console.log(person1.getDetails());
+
+
+let person2 = new Person('22222222', 'David', 'D');
+console.log(person2.getDetails());
+
+let person3 = new Person('5555555', 'Scott', 'S');
+console.log(person3.getDetails());
+
+//</*************************** Object ******************************>
